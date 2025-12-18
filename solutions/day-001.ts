@@ -19,7 +19,7 @@ export function getPermissions(role: Role): Permission {
       return _exhaustive;
   }
 }
-// version 1 feed back: 9/10 working but not scalable
+// version 1 feedback: 9/10 working but not scalable
 
 // version 2
 
@@ -53,18 +53,10 @@ export function getPermissionsV2(role: Role): Permission {
   }
 }
 
-// version 2 feed back: 9.5/10 scalable but gave redundant exhaustiveness check switch and permissionsByRole: Record<Role, Permission>
+// version 2 feedback: 9.5/10 scalable but gave redundant exhaustiveness check switch and permissionsByRole: Record<Role, Permission>
 
 // version 3 10/10
 
 export function getPermissionsV3(role: Role): Permission {
-  switch (role) {
-    case "admin":
-    case "editor":
-    case "viewer":
-      return permissionsByRole[role];
-    default:
-      const _exhaustive: never = role;
-      return _exhaustive;
-  }
+  return permissionsByRole[role];
 }
