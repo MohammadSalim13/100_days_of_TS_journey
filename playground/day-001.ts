@@ -1,11 +1,11 @@
 type Role = "admin" | "editor" | "viewer";
 
-type Permission = {
+type Permissions = {
   canRead: boolean;
   canWrite: boolean;
   canDelete: boolean;
 };
 
-function getPermissions(role: Role): Permission {
+export function getPermissions(role: Role): Permissions {
   // TODO
 }
